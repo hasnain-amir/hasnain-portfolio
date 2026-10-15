@@ -491,6 +491,12 @@ export default function HomePage() {
           </address>
         </section>
       </main>
+
+      <footer>
+        <p>© {new Date().getFullYear()} Hasnain Amir.</p>
+
+        <a href="#top">Back to top</a>
+      </footer>
     </>
   );
 }
