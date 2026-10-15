@@ -2,11 +2,26 @@ import Image from "next/image";
 import Link from "next/link";
 import { RotatingStatus } from "./rotating-status";
 
+interface Note {
+  title: string;
+  summary: string;
+  publishedAt: {
+    iso: string;
+    label: string;
+  };
+  href?: string;
+}
+
+const notes: readonly Note[] = [
+  // TODO: Add notes here
+];
+
+const hasNotes = notes.length > 0;
+
 const navigationItems = [
   { href: "#work", label: "Work" },
   { href: "#experiments", label: "Experiments" },
-  { href: "#notes", label: "Notes" },
-  { href: "#now", label: "Now" },
+  ...(hasNotes ? [{ href: "#notes", label: "Notes" }] : []),
   { href: "#contact", label: "Contact" },
 ] as const;
 
@@ -281,6 +296,7 @@ export default function HomePage() {
             </li>
           </ol>
         </section>
+
         <section id="experiments" aria-labelledby="experiments-heading">
           <header>
             <h2 id="experiments-heading">Experiments</h2>
@@ -403,6 +419,76 @@ export default function HomePage() {
               </article>
             </li>
           </ul>
+        </section>
+
+        {hasNotes ? (
+          <section id="notes" aria-labelledby="notes-heading">
+            <header>
+              <h2 id="notes-heading">Notes</h2>
+              <p>Short observations from building, breaking and learning.</p>
+            </header>
+
+            <ol>
+              {notes.map((note) => (
+                <li key={note.title}>
+                  <article>
+                    <h3>{note.title}</h3>
+
+                    <time dateTime={note.publishedAt.iso}>
+                      {note.publishedAt.label}
+                    </time>
+
+                    <p>{note.summary}</p>
+
+                    {note.href ? (
+                      <Link href={note.href}>
+                        Read note <span aria-hidden="true">↗</span>
+                      </Link>
+                    ) : null}
+                  </article>
+                </li>
+              ))}
+            </ol>
+          </section>
+        ) : null}
+
+        <section id="contact" aria-labelledby="contact-heading">
+          <header>
+            <h2 id="contact-heading">Contact</h2>
+          </header>
+
+          <p>
+            If you’re hiring for a placement, building something interesting, or
+            want to compare notes on software, get in touch.
+          </p>
+
+          <address>
+            <ul>
+              <li>
+                <a href="mailto:hasnain-amir@outlook.com">
+                  hasnain-amir@outlook.com
+                </a>
+              </li>
+
+              <li>
+                <a href="https://github.com/hasnain-amir">
+                  GitHub <span aria-hidden="true">↗</span>
+                </a>
+              </li>
+
+              <li>
+                <a href="https://www.linkedin.com/in/hasnain-amir/">
+                  LinkedIn <span aria-hidden="true">↗</span>
+                </a>
+              </li>
+
+              <li>
+                <a href="/cv.pdf" download>
+                  Download CV
+                </a>
+              </li>
+            </ul>
+          </address>
         </section>
       </main>
     </>
