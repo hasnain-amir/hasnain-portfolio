@@ -281,6 +281,129 @@ export default function HomePage() {
             </li>
           </ol>
         </section>
+        <section id="experiments" aria-labelledby="experiments-heading">
+          <header>
+            <h2 id="experiments-heading">Experiments</h2>
+
+            <p>
+              Smaller builds, technical experiments and university projects that
+              do not need a full case study.
+            </p>
+          </header>
+
+          <ul>
+            <li>
+              <article>
+                <h3>Full-text search engine</h3>
+
+                <p>
+                  A small Python search engine for a fixed document collection,
+                  using an inverted index and BM25 ranking with a lightweight
+                  query parser and performance benchmarks.
+                </p>
+
+                {/* TODO: Add the public GitHub repository for the full-text search engine. */}
+              </article>
+            </li>
+
+            <li>
+              <article>
+                <h3>Authentication service</h3>
+
+                <p>
+                  A focused authentication service exploring TOTP, WebAuthn and
+                  refresh-token rotation, with an audit log for
+                  security-sensitive events.
+                </p>
+
+                {/* TODO: Add the public GitHub repository for the authentication service. */}
+              </article>
+            </li>
+
+            <li>
+              <article>
+                <h3>Real-time collaborative project tool</h3>
+
+                <p>
+                  A small shared project board using CRDT-based synchronisation
+                  for tasks and live participant presence.
+                </p>
+
+                {/* TODO: Add the public GitHub repository for the collaborative project tool. */}
+              </article>
+            </li>
+
+            <li>
+              <article>
+                <h3>LSM-tree key-value store</h3>
+
+                <p>
+                  An educational, single-node key-value store using a
+                  write-ahead log, memtable, SSTables and basic compaction.
+                </p>
+
+                {/* TODO: Add the public GitHub repository for the LSM-tree store. */}
+              </article>
+            </li>
+
+            <li>
+              <article>
+                <h3>CV management system</h3>
+
+                <p>
+                  A full-stack application with user authentication, editable CV
+                  profiles, live search and a MySQL-backed data model.
+                </p>
+
+                <p>
+                  <a href="https://github.com/hasnain-amir/cv-management-frontend">
+                    View frontend repository <span aria-hidden="true">↗</span>
+                  </a>
+
+                  <span aria-hidden="true"> · </span>
+
+                  <a href="https://github.com/hasnain-amir/cv-management-backend">
+                    View backend repository <span aria-hidden="true">↗</span>
+                  </a>
+                </p>
+              </article>
+            </li>
+
+            <li>
+              <article>
+                <h3>Project management database</h3>
+
+                <p>
+                  A normalised MySQL database modelling projects, staff and
+                  assignments through query-driven workflows.
+                </p>
+
+                <p>
+                  <a href="https://github.com/hasnain-amir/project-management-database">
+                    View repository <span aria-hidden="true">↗</span>
+                  </a>
+                </p>
+              </article>
+            </li>
+
+            <li>
+              <article>
+                <h3>Arduino embedded system</h3>
+
+                <p>
+                  A sensor-driven embedded system using state machines and
+                  real-time control to coordinate hardware inputs and outputs.
+                </p>
+
+                <p>
+                  <a href="https://github.com/hasnain-amir/arduino-embedded-systems">
+                    View repository <span aria-hidden="true">↗</span>
+                  </a>
+                </p>
+              </article>
+            </li>
+          </ul>
+        </section>
       </main>
     </>
   );
