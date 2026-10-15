@@ -465,9 +465,7 @@ export default function HomePage() {
           <address>
             <ul>
               <li>
-                <a href="mailto:hasnain-amir@outlook.com">
-                  hasnain-amir@outlook.com
-                </a>
+                <a href="mailto:hello@hasnainamir.com">hello@hasnainamir.com</a>
               </li>
 
               <li>
