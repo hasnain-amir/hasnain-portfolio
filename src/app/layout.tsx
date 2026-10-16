@@ -1,9 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import {
-  JetBrains_Mono,
-  Newsreader,
-  Noto_Naskh_Arabic,
-} from "next/font/google";
+import { IBM_Plex_Mono, Newsreader, Noto_Naskh_Arabic } from "next/font/google";
 import type { ReactNode } from "react";
 import "./globals.css";
 
@@ -14,8 +10,9 @@ const serif = Newsreader({
   display: "swap",
 });
 
-const mono = JetBrains_Mono({
+const mono = IBM_Plex_Mono({
   subsets: ["latin"],
+  weight: ["400", "500", "600"],
   variable: "--font-mono",
   display: "swap",
 });
@@ -27,7 +24,8 @@ const arabic = Noto_Naskh_Arabic({
   preload: false,
 });
 
-const siteUrl = process.env.SITE_URL ?? "https://hasnainamir.com";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://hasnainamir.com";
+
 const description =
   "Portfolio of Hasnain Amir, a Computer Science student at Aston University who builds focused, design-led software.";
 
@@ -38,7 +36,9 @@ export const metadata: Metadata = {
     template: "%s - Hasnain Amir",
   },
   description,
-  alternates: { canonical: "/" },
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     type: "website",
     url: "/",
@@ -57,7 +57,7 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  themeColor: "#f1ede3",
+  themeColor: "#171714",
 };
 
 const personJsonLd = {
@@ -88,6 +88,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
     >
       <body>
         {children}
+
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
